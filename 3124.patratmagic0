@@ -1,0 +1,33 @@
+#include<iostream>
+using namespace std;
+int main(){
+long long int n, m[501][501], s1=0, s2=0, sum=0, sd1=0, sd2=0;
+bool ok=1;
+cin>>n;
+for(int i=0;i<n;i++) for(int j=0;j<n;j++) cin>>m[i][j];
+
+for(int i=0;i<n;i++){
+for(int j=0;j<n;j++){
+s1+=m[i][j];
+}
+if(i==0) sum=s1;
+if(sum!=s1) ok=0;
+s1=0;
+}
+
+for(int i=0;i<n;i++){
+for(int j=0;j<n;j++){
+s2+=m[j][i];
+
+if(i==j)  sd1+=m[i][j];
+if(j==n-i-1) sd2+=m[i][j];
+
+}
+if(sum!=s2) ok=0;
+s2=0;
+}
+
+if(sd1!=sum || sd2!=sum) ok=0;
+if(ok) cout<<"true"; else cout<<"false";
+
+}
