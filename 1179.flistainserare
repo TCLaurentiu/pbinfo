@@ -1,0 +1,8 @@
+void inserare(nod *p, nod *q, int x){
+nod *node=p, *ur,  *_new=new nod;
+while(node!=q) node=node->urm;
+ur=node->urm;
+_new->info=x;
+_new->urm=ur;
+node->urm=_new;
+}
