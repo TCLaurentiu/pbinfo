@@ -1,0 +1,8 @@
+int numarare(nod *p){
+int c=1;
+while(p->urm){
+c++;
+p=p->urm;
+}
+return c;
+};
