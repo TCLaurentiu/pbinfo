@@ -1,0 +1,8 @@
+void sterge(nod *&p, nod *q){
+nod *c=p;
+if(p==q) p=p->urm;
+else{
+while(c->urm!=q && c) c=c->urm;
+c->urm=q->urm;
+}
+}
